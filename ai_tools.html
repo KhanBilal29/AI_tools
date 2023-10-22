@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom New Tab</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: lightgray;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            background-color: #49a2e3;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px;
+        }
+        .button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 18px;
+            border-radius: 15px 50px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .button::before {
+            content: "";
+            background: rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .button:hover {
+            background-color: #4CAF50; /* Light green color on hover */
+            transform: scale(1.05);
+        }
+        .button:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">My Custom New Tab Page</h1>
+    <div class="button-container">
+        <script>
+            // JavaScript loop to generate buttons
+            const buttonData = [
+                { text: "Bard", url: "https://bard.google.com/chat" },
+                { text: "Google", url: "https://www.google.com" },
+                { text: "12ft", url: "https://12ft.io" },
+                { text: "Gamma.app", url: "https://gamma.app" },
+                { text: "Yoodli", url: "https://app.yoodli.ai" },
+                { text: "sci-hub", url: "https://sci-hub.se" },
+                { text: "Merlin", url: "https://app.getmerlin.in/dashboard" },
+                { text: "Playground", url: "https://playground.com/feed" },
+                { text: "Debugcode", url: "https://debugcode.ai" },
+                { text: "Formula.dog", url: "https://formula.dog/dashboard/formulas" },
+                { text: "Signalhire", url: "https://www.signalhire.com/profile" },
+                { text: "Unschooler", url: "https://unschooler.me" },
+                { text: "Learngpt", url: "https://learngpt.art/new" },
+                { text: "Vercel", url: "https://gpt-react-designer.vercel.app" },
+                { text: "GitHubCopilot", url: "https://github.com/features/copilot" },
+                { text: "Imagica", url: "https://create.imagica.ai/fot/#/editor" },
+                { text: "Zapier", url: "https://zapier.com/app/dashboard" },
+                { text: "LearnPrompts", url: "https://learnprompts.org" },
+                { text: "Loopcv", url: "https://app.loopcv.pro/overview" },
+                { text: "Jobscan", url: "https://app.jobscan.co/dashboard" },
+                { text: "Framer", url: "https://framer.com/projects" },
+                { text: "Leonardo", url: "https://app.leonardo.ai/ai-generations" },
+                { text: "BlueWillow", url: "https://bluewillow.com" },
+                { text: "Bing", url: "https://www.bing.com/images/create?" },
+                { text: "Jailbreakchat", url: "https://www.jailbreakchat.com" },
+                { text: "Chat.Dante", url: "https://chat.dante-ai.com" },
+                { text: "Chatbots", url: "https://www.chatbase.co" },
+                { text: "ElevenLabs", url: "https://elevenlabs.io" },
+                { text: "Chat.Freedomgpt", url: "https://chat.freedomgpt.com" },
+                { text: "Chatgpt", url: "https://chat.openai.com" }
+            ];
+
+            for (const item of buttonData) {
+                const button = document.createElement('a');
+                button.className = "button";
+                button.href = item.url;
+                button.target = "_blank";
+                button.textContent = item.text;
+
+                document.querySelector('.button-container').appendChild(button);
+            }
+        </script>
+    </div>
+</body>
+</html>
